@@ -1,0 +1,31 @@
+{
+  "name": "hutech-api",
+  "version": "1.0.0",
+  "description": "api website daotao.hutech.edu.vn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./test/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianJSX/Hutech-Api.git"
+  },
+  "keywords": [
+    "hutech",
+    "hutech api",
+    "hutech-api"
+  ],
+  "author": "brainjsx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrianJSX/Hutech-Api/issues"
+  },
+  "homepage": "https://github.com/BrianJSX/Hutech-Api#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15",
+    "request-promise": "^4.2.6"
+  }
+}
