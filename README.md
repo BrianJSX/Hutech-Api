@@ -1,4 +1,4 @@
-# Hutech Api - BrainJSX
+# Hutech Api
 ## API WEB DAOTAO.HUTECH.EDU.VN
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
@@ -13,7 +13,7 @@ Hutech api was written to make it easier to get the data of the Hutech website.
 
 ## Tech
 
-Dillinger uses a number of open source projects to work properly:
+Package uses a number of open source projects to work properly:
 - [node.js] - you can use with nodejs 
 - [Express] - fast node.js network app framework
 
@@ -29,28 +29,30 @@ Install the dependencies and devDependencies and start the server.
 ```sh
 cd your-project
 npm install --save hutech-api
-or
-npm install --dev hutech-api
 ```
 ## Usage
-- getcookie:
+- import 
     ```
-    Hutech.getcookie("username", password);
+    const Hutech = require("hutech-api")
     ```
-- getSchedulePersonal
+- getcookie::
+    ```
+    Hutech.getCookie("username", password);
+    ```
+- getSchedulePersonal (http://daotao.hutech.edu.vn/default.aspx?page=thoikhoabieu&sta=1):
     ```
     Hutech.getSchedulePersonal("username", "password");
     ```
-- getScheduleWeek
+- getScheduleWeek (http://daotao.hutech.edu.vn/default.aspx?page=thoikhoabieu&sta=0)
     ```
     Hutech.getScheduleWeek("username", "password");
     ```
-- getPoint
+- getPoint (http://daotao.hutech.edu.vn/Default.aspx?page=xemdiemthi)
     ```
     Hutech.getPoint("username", "password");
     ```
 ## License
-MIT
+ISC
 
 **Free Software, Hell Yeah!**
 
