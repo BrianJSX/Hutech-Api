@@ -1,6 +1,6 @@
 {
   "name": "hutech-api",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "api website daotao.hutech.edu.vn",
   "main": "index.js",
   "scripts": {
