@@ -115,7 +115,7 @@ npm install --save hutech-api
     ```
 - getInfoStudent (http://daotao.hutech.edu.vn/Default.aspx?page=xemdiemthi)
     ```
-    Hutech.getPoint("username", "password");
+    Hutech.getInfoStudent("username", "password");
     ```
 - Reponse getInfoStudent: 
     ```
