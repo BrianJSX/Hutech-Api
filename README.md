@@ -80,7 +80,7 @@ npm install --save hutech-api
         ]
     }
     ```
-- getPoint (http://daotao.hutech.edu.vn/Default.aspx?page=xemlichthi)
+- getPoint (http://daotao.hutech.edu.vn/Default.aspx?page=xemdiemthi)
     ```
     Hutech.getPoint("username", "password");
     ```
@@ -113,7 +113,7 @@ npm install --save hutech-api
         ]
     }
     ```
-- getInfoStudent (http://daotao.hutech.edu.vn/Default.aspx?page=xemdiemthi)
+- getInfoStudent (http://daotao.hutech.edu.vn/Default.aspx?page=xemlichthi)
     ```
     Hutech.getInfoStudent("username", "password");
     ```
