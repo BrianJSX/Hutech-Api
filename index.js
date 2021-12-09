@@ -72,10 +72,29 @@ const getPoint = async (user, password) => {
   }
 };
 
+/**
+ * 
+ * @param {*} user 
+ * @param {*} password 
+ * @returns point
+ */
+
+ const getInfoStudent = async (user, password) => {
+  try {
+    const Hutech = new HutechAPI();
+    await Hutech.login(user, password);
+    let point = await Hutech.getInfoStudent();
+    return point;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 module.exports = {
   getCookie,
   getScheduleWeek,
   getSchedulePersonal,
-  getPoint
+  getPoint,
+  getInfoStudent
 };

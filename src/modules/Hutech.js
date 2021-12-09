@@ -168,8 +168,8 @@ class APIHutech {
           data: [],
         };
 
-         //dataObj is once object in schedule
-         let dataObj = {
+        //dataObj is once object in schedule
+        let dataObj = {
           title: null,
           pointSubject: [],
           pointAll: [],
@@ -181,15 +181,6 @@ class APIHutech {
           point4: null,
           tcd: null,
           tctl: null,
-        };
-
-        //Object in dataObj.pointSubject
-        let typePointSubject = {
-          codeSubject: null,
-          subject: null,
-          tc: null,
-          kind: null,
-          total: null,
         };
 
         //request GET to server daotao.hutech.edu.vn
@@ -211,10 +202,12 @@ class APIHutech {
 
         //put all value to dataObj and push to the schedule
         tr.each(function (i) {
-          if ($(this).attr("class") == "title-hk-diem") { //if DOM class == "title-hk-diem"
+          if ($(this).attr("class") == "title-hk-diem") {
+            //if DOM class == "title-hk-diem"
             let title = $(this).text();
             dataObj.title = title;
-          } else if ($(this).attr("class") == "row-diemTK") { //if DOM class == "row-diemTK"
+          } else if ($(this).attr("class") == "row-diemTK") {
+            //if DOM class == "row-diemTK"
             flag += 1; //flag i check dom index == 4
 
             //selector all td in DOM class "row-diemTK"
@@ -253,7 +246,16 @@ class APIHutech {
                 }
               });
             }
-          } else { //if DOM class == "row-diem"
+          } else {
+            //Object in dataObj.pointSubject
+            let typePointSubject = {
+              codeSubject: null,
+              subject: null,
+              tc: null,
+              kind: null,
+              total: null,
+            };
+            //if DOM class == "row-diem"
             let element = $(this).children();
             element.each(function (i) {
               if (i == 1) typePointSubject.codeSubject = $(this).text();
@@ -266,6 +268,64 @@ class APIHutech {
           }
         });
         resolve(point);
+      } catch (error) {
+        console.log(error);
+        reject(error);
+      }
+    });
+  }
+
+  getInfoStudent() {
+    return new Promise(async (resolve, reject) => {
+      try {
+        let info = {
+          studentCode: null,
+          studentName: null,
+          gender: null,
+          country: null,
+          class: null,
+          majors: null,
+          department: null,
+          education: null,
+          year: null,
+        };
+
+        //request GET to server daotao.hutech.edu.vn
+        const $ = await this.requestApi({
+          enpoint: "/default.aspx?page=xemdiemthi",
+          isTransform: true,
+        });
+        //set data info
+        info.studentCode = $(
+          "#ctl00_ContentPlaceHolder1_ctl00_ucThongTinSV_lblMaSinhVien"
+        ).text();
+        info.studentName = $(
+          "#ctl00_ContentPlaceHolder1_ctl00_ucThongTinSV_lblTenSinhVien"
+        ).text();
+        info.gender = $(
+          "#ctl00_ContentPlaceHolder1_ctl00_ucThongTinSV_lblPhai"
+        ).text();
+        info.country = $(
+          "#ctl00_ContentPlaceHolder1_ctl00_ucThongTinSV_lblNoiSinh"
+        ).text();
+        info.class = $(
+          "#ctl00_ContentPlaceHolder1_ctl00_ucThongTinSV_lblLop"
+        ).text();
+        info.majors = $(
+          "#ctl00_ContentPlaceHolder1_ctl00_ucThongTinSV_lbNganh"
+        ).text();
+        info.department = $(
+          "#ctl00_ContentPlaceHolder1_ctl00_ucThongTinSV_lblKhoa"
+        ).text();
+        info.education = $(
+          "#ctl00_ContentPlaceHolder1_ctl00_ucThongTinSV_lblHeDaoTao"
+        ).text();
+        info.year = $(
+          "#ctl00_ContentPlaceHolder1_ctl00_ucThongTinSV_lblKhoaHoc"
+        ).text();
+        //selector element in id ##ctl00_ContentPlaceHolder1_ctl00_div1 tbody
+
+        resolve(info);
       } catch (error) {
         console.log(error);
         reject(error);
