@@ -43,7 +43,7 @@ npm install --save hutech-api
     ```
     Hutech.getSchedulePersonal("username", "password");
     ```
-- Reponse getSchedulePersonal: 
+- Response getSchedulePersonal: 
     ```
     {
         "account": "Hồ Văn Minh (1811060485)",
@@ -63,7 +63,7 @@ npm install --save hutech-api
     ```
     Hutech.getScheduleWeek("username", "password");
     ```
-- Reponse getScheduleWeek: 
+- Response getScheduleWeek: 
     ```
     {
         "account": "Hồ Văn Minh (1811060485)",
@@ -84,7 +84,7 @@ npm install --save hutech-api
     ```
     Hutech.getPoint("username", "password");
     ```
-- Reponse getPoint: 
+- Response getPoint: 
     ```
     {
         "account": "Hồ Văn Minh (1811060485)",
@@ -117,7 +117,7 @@ npm install --save hutech-api
     ```
     Hutech.getInfoStudent("username", "password");
     ```
-- Reponse getInfoStudent: 
+- Response getInfoStudent: 
     ```
     {
         "studentCode": "1811060485",
