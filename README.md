@@ -10,6 +10,7 @@ Hutech api was written to make it easier to get the data of the Hutech website.
 - getSchedulePersonal ✨
 - getPoint ✨
 - gettScheduleWeek ✨
+- getInfoStudent  ✨
 
 ## Tech
 
@@ -32,19 +33,19 @@ npm install --save hutech-api
 ```
 ## Usage
 - import 
-    ```
+    ```js
     const Hutech = require("hutech-api")
     ```
 - getCookie::
-    ```
+    ```js
     Hutech.getCookie("username", password);
     ```
 - getSchedulePersonal (http://daotao.hutech.edu.vn/default.aspx?page=thoikhoabieu&sta=1):
-    ```
+    ```js
     Hutech.getSchedulePersonal("username", "password");
     ```
 - Response getSchedulePersonal: 
-    ```
+    ```json
     {
         "account": "Hồ Văn Minh (1811060485)",
         "data": [
@@ -60,11 +61,11 @@ npm install --save hutech-api
     }
     ```
 - getScheduleWeek (http://daotao.hutech.edu.vn/default.aspx?page=thoikhoabieu&sta=0)
-    ```
+    ```js
     Hutech.getScheduleWeek("username", "password");
     ```
 - Response getScheduleWeek: 
-    ```
+    ```json
     {
         "account": "Hồ Văn Minh (1811060485)",
         "data": [
@@ -81,11 +82,11 @@ npm install --save hutech-api
     }
     ```
 - getPoint (http://daotao.hutech.edu.vn/Default.aspx?page=xemdiemthi)
-    ```
+    ```js
     Hutech.getPoint("username", "password");
     ```
 - Response getPoint: 
-    ```
+    ```json
     {
         "account": "Hồ Văn Minh (1811060485)",
         "data": [
@@ -109,16 +110,17 @@ npm install --save hutech-api
                     "tctl": "14"
                 }
             ]
-           }
+           },
+           ...
         ]
     }
     ```
 - getInfoStudent (http://daotao.hutech.edu.vn/Default.aspx?page=xemlichthi)
-    ```
+    ```js
     Hutech.getInfoStudent("username", "password");
     ```
 - Response getInfoStudent: 
-    ```
+    ```json
     {
         "studentCode": "1811060485",
         "studentName": "Hồ Văn Minh",
@@ -133,18 +135,18 @@ npm install --save hutech-api
     ```
 ## Response Key (Vietnamese)
 ```
-    "codeSubject": Mã MH
-    "subject": Tên MH
-    "start": Tiết BD
+    "codeSubject": Mã MH,
+    "subject": Tên MH,
+    "start": Tiết BD,
     "room": Phòng,
-    "date": Thời gian học
-    "tc": Tín chỉ môn
-    "kind": xếp loại
-    "total": Tổng điểm hệ số 4
+    "date": Thời gian học,
+    "tc": Tín chỉ môn,
+    "kind": xếp loại,
+    "total": Tổng điểm hệ số 4,
     "pointTb": Điểm trung bình học kỳ hệ 4,
     "point4": Điểm trung bình tích lũy (hệ 4),
     "tcd": Số tín chỉ đạt,
-    "tctl": Số tín chỉ tích lũy
+    "tctl": Số tín chỉ tích lũy,
     "studentCode": Mã sinh viên,
     "studentName": Tên sinh viên,    
     "gender": Phái,
@@ -154,6 +156,7 @@ npm install --save hutech-api
     "department": Khoa,
     "education": Hệ đào tạo,
     "year": Khóa học
+   
 ```
 ## License
 ISC
