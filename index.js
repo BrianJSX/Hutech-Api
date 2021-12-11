@@ -2,9 +2,9 @@ const HutechAPI = require("./src/modules/Hutech");
 
 /**
  * 
- * @param {*} user 
- * @param {*} password 
- * @returns cookie
+ * @param {String} user The String is the student code
+ * @param {String} password The String is password
+ * @returns {Object} cookie The Object is cookie on Browser 
  */
 
 const getCookie = async (user, password) => {
@@ -19,9 +19,9 @@ const getCookie = async (user, password) => {
 
 /**
  * 
- * @param {*} user 
- * @param {*} password 
- * @returns schedule
+ * @param {String} user The String is the student code
+ * @param {String} password The String is password
+ * @returns {Object} schedule The Object is data schedule personal of student
  */
 
 const getSchedulePersonal = async (user, password) => {
@@ -37,9 +37,9 @@ const getSchedulePersonal = async (user, password) => {
 
 /**
  * 
- * @param {*} user 
- * @param {*} password 
- * @returns schedule
+ * @param {String} user The String is the student code
+ * @param {String} password The String is password
+ * @returns {Object} schedule The Object is data schedule week of student
  */
 
 const getScheduleWeek = async (user, password) => {
@@ -56,9 +56,9 @@ const getScheduleWeek = async (user, password) => {
 
 /**
  * 
- * @param {*} user 
- * @param {*} password 
- * @returns point
+ * @param {String} user The String is the student code
+ * @param {String} password The String is password
+ * @returns {Object} point The object is data point student
  */
 
 const getPoint = async (user, password) => {
@@ -74,17 +74,17 @@ const getPoint = async (user, password) => {
 
 /**
  * 
- * @param {*} user 
- * @param {*} password 
- * @returns point
+ * @param {String} user The String is the student code.
+ * @param {String} password  The String is password.
+ * @returns {Object} info The object is data info student.
  */
 
  const getInfoStudent = async (user, password) => {
   try {
     const Hutech = new HutechAPI();
     await Hutech.login(user, password);
-    let point = await Hutech.getInfoStudent();
-    return point;
+    let info = await Hutech.getInfoStudent();
+    return info;
   } catch (error) {
     console.log(error);
   }
