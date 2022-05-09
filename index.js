@@ -13,7 +13,7 @@ const getCookie = async (user, password) => {
     const cookie = await Hutech.login(user, password);
     return cookie;
   } catch (error) {
-    console.log(error);
+    return error
   }
 };
 
@@ -31,7 +31,7 @@ const getSchedulePersonal = async (user, password) => {
     let schedule = await Hutech.getSchedulPersonal();
     return schedule;
   } catch (error) {
-    console.log(error);
+    return error
   }
 };
 
@@ -50,7 +50,7 @@ const getScheduleWeek = async (user, password) => {
     console.log(schedule);
     return schedule;
   } catch (error) {
-    console.log(error);
+    return error
   }
 };
 
@@ -68,7 +68,7 @@ const getPoint = async (user, password) => {
     let point = await Hutech.getPoint();
     return point;
   } catch (error) {
-    console.log(error);
+    return error
   }
 };
 
@@ -86,7 +86,7 @@ const getPoint = async (user, password) => {
     let info = await Hutech.getInfoStudent();
     return info;
   } catch (error) {
-    console.log(error);
+    return error
   }
 };
 

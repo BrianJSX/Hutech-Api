@@ -75,7 +75,6 @@ class APIHutech {
         //get username in id #ctl00_Header1_Logout1_lblNguoiDung
         let name = $("#ctl00_Header1_Logout1_lblNguoiDung").text();
         schedule.account = name.slice(9);
-
         //push dataObj in schedule
         table.each(function (i) {
           let data = {
